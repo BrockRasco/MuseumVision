@@ -6,6 +6,7 @@ include_once "$racine/modele/bd.expo.inc.php";
 
 
 
+
 // recuperation des donnees GET, POST, et SESSION
 ;
 

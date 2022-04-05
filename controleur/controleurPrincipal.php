@@ -4,6 +4,8 @@ function controleurPrincipal($action){
     $lesActions = array();
     $lesActions["connexion"] = "connexion.php";
     $lesActions["deconnexion"] = "deconnexion.php";
+    $lesActions["expo"] = "expo.php";
+
 
 
     
@@ -11,7 +13,7 @@ function controleurPrincipal($action){
         return $lesActions[$action];
     }
     else{
-        return $lesActions["defaut"];
+        return $lesActions["expo"];
     }
 
 }

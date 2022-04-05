@@ -20,3 +20,4 @@ function getExpos() {
         die();
     }
     return $resultat;}
+

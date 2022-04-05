@@ -48,7 +48,7 @@
 <input type="number" id="EntEnf" name="EntEnf"
        min="0" max="100">
     <br>
-    <h3><p style="color:red;">Exposition:</p></h3>
+    <h3><p style="color:#d48603;">Exposition:</p></h3>
 <?php
 for ($i = 0; $i < count($listeExpos); $i++){
     ?>
@@ -65,7 +65,9 @@ for ($i = 0; $i < count($listeExpos); $i++){
 <script>
     function myFunction()
     {
-        alert("Restant a Payer :\nJSP j'ai pas fait la fonction pour calculer encore");
+        let newWindow = open('vue/vueTarif.html.php', 'example', 'width=300,height=300')
+        newWindow.focus();
+
     }
 </script>
 

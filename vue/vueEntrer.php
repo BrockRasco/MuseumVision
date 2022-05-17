@@ -39,13 +39,13 @@
     </div>
 
 </header>
-<form>
-<label for="EntAld">Nombre d'entrée Adulte</label>
-<input type="number" id="EntAld" name="EntAld"
+<form action="/?action=expo" method="post">
+<label for="NbAdu">Nombre d'entrée Adulte</label>
+<input type="number" id="NbAdu" name="NbAdu"
        min="0" max="100">
 <br>
-<label for="EntEnf">Nombre d'entrée Enfant</label>
-<input type="number" id="EntEnf" name="EntEnf"
+<label for="NbEnf">Nombre d'entrée Enfant</label>
+<input type="number" id="NbEnf" name="NbEnf"
        min="0" max="100">
     <br>
     <h3><p style="color:#d48603;">Exposition:</p></h3>
@@ -53,24 +53,33 @@
 for ($i = 0; $i < count($listeExpos); $i++){
     ?>
 
-    <input type="checkbox" id=expo"<?php echo $listeExpos[$i]['id']?>">
+    <input type="checkbox" id="expo<?php echo $listeExpos[$i]['id']?>" name="expo<?php echo $listeExpos[$i]['id']?>">
     <label for=expo"<?php echo $listeExpos[$i]['id']?>><?php echo '' . $listeExpos[$i]['nom']?></label><br>
     <?php
 } ?>
 </form>
 
-<input type="button" onclick="myFunction()" value="Tarif">
-
-
-<script>
-    function myFunction()
-    {
-        let newWindow = open('vue/vueTarif.html.php', 'example', 'width=300,height=300')
-        newWindow.focus();
-
-    }
-</script>
-
+<html>
+<head>
+    <script>
+        function myFunction() {
+            var x;
+            var r = confirm("Le Formulaire est remplie correctement ?");
+            if (r == true) {
+                x = "Voici votre Tarif :";
+            }
+            else {
+                x = "Veuillez remplir correctement le formulaire";
+            }
+            document.getElementById("demo").innerHTML = x;
+        }
+    </script>
+</head>
+<body>
+<button type="submit" onclick="myFunction()">Tarif</button>
+<p id="demo"></p>
+</body>
+</html>
 
 <script src="js/jquery-3.4.1.min.js"></script>
 </body>

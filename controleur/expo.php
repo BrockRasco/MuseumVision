@@ -4,17 +4,21 @@ if ( $_SERVER["SCRIPT_FILENAME"] == __FILE__ ){
 }
 include_once "$racine/modele/bd.expo.inc.php";
 
-
-
-
-// recuperation des donnees GET, POST, et SESSION
-;
-
-// appel des fonctions permettant de recuperer les donnees utiles a l'affichage
 $listeExpos = getExpos();
+$maxId = getIdExpoMax();
 
-// traitement si necessaire des donnees recuperees
-;
+
+
+for ($i=$maxId; $i>0; $i--)
+{
+    if (isset($_POST['expo'.$i]))
+    {
+        $Tarif=(getTarA($i)*$_POST['NbAdu'])+(getTarE($i)*$_POST['NbEnf']);
+    }
+
+}
+
+
 
 // appel du script de vue qui permet de gerer l'affichage des donnees
 

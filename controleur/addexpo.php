@@ -10,7 +10,7 @@ $reponse = $bdd->query('SELECT max(id)+1 from exposition');
 $idmax = $reponse->fetch();
 
 
-$reponse = $bdd->exec('INSERT INTO exposition VALUES ('.$idmax[0].',\''.$_POST['nom'].'\',\''.$_POST['permanent'].'\',\''.$_POST['tarifEnfant'].'\',\''.$_POST['tarifAdulte'].'\',\''.$_POST['active'].'\')');
+$reponse = $bdd->exec('INSERT INTO exposition VALUES ('.$idmax[0].',\''.$_POST['nom'].'\',\''.$_POST['tarifAdulte'].'\',\''.$_POST['tarifEnfant'].'\',\''.$_POST['active'].'\',\''.$_POST['permanent'].'\')');
 
 
 header('Location: Manageur.php');

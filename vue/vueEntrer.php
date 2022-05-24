@@ -54,13 +54,13 @@ for ($i = 0; $i < count($listeExpos); $i++){
     ?>
 
     <input type="checkbox" id="expo<?php echo $listeExpos[$i]['id']?>" name="expo<?php echo $listeExpos[$i]['id']?>">
-    <label for=expo"<?php echo $listeExpos[$i]['id']?>><?php echo '' . $listeExpos[$i]['nom']?></label><br>
+    <label for="expo<?php echo $listeExpos[$i]['id']?>"><?php echo '' . $listeExpos[$i]['nom']?></label><br>
     <?php
 } ?>
     <button type="submit">Tarif</button>
+    voici votre Tarif : <?php echo $prix ?> €
 </form>
 <script src="js/jquery-3.4.1.min.js"></script>
 
 </body>
 </html>
-voici le votre Tarif : <?php echo $prix ?> €

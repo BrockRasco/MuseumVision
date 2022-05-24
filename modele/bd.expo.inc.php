@@ -36,7 +36,7 @@ function getPrixAdulte($id) {
         print "Erreur !: " . $e->getMessage();
         die();
     }
-    return $resultat;
+    return intval($resultat["tarifAdulte"]);
 }
 
 function getPrixEnfant($id) {
@@ -52,7 +52,7 @@ function getPrixEnfant($id) {
         print "Erreur !: " . $e->getMessage();
         die();
     }
-    return $resultat;}
+    return intval($resultat["tarifEnfant"]);}
 
 function getIdExpoMax(){
 
@@ -67,6 +67,8 @@ function getIdExpoMax(){
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage();
         die();
+
     }
-    return intval($resultat);}
+
+    return intval($resultat["max(id)"]);}
 

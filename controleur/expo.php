@@ -8,17 +8,14 @@ $listeExpos = getExpos();
 $maxId = getIdExpoMax();
 
 $prix=0;
-$maxID=getIdExpoMax();
-for ($i = $maxID; $i>0;$i--){
+
+for ($i = $maxId; $i>0;$i--){
     if (isset($_POST['expo'.$i]))
     {
         $prixEnfant = getPrixEnfant($i);
         $nbEnfant = $_POST['NbEnf'];
         $prixAdulte = getPrixAdulte($i);
         $nbAdulte = $_POST ['NbAdu'];
-
-
-
 
         $prix = ($prixEnfant * $nbEnfant) + ($prixAdulte * $nbAdulte);
 

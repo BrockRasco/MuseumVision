@@ -16,31 +16,17 @@
             
             <ul id="menuGeneral">
                 <li><a href="index.php">Acceuil</a></li>
-                <li><a href="./?action=recherche"><img src="images/rechercher.png" alt="loupe" />Recherche</a></li>
+                <li></li>
+                <li></li>
+                <li></li>
                 <li></li> 
+                <li></li>
+                <li><a href="controleur/Manageur.php">Manager</a></li>
 
-                <li></li> 
-                <li><a href="vue/VueParametre.php">Manager</a></li>
 
-                <li><a href="./?action=connexion"><img src="images/profil.png" alt="loupe" />Connexion</a></li>
             </ul>
     </nav>
-    <div id="bouton">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <ul id="menuContextuel">
-        <li><img src="images/logoBarre.png" alt="logo" /></li>
-        <?php if (isset($menuBurger)) { ?>
-            <?php for ($i = 0; $i < count($menuBurger); $i++) { ?>
-                <li>
-                    <a href="<?php echo $menuBurger[$i]['url']; ?>">
-                        <?php echo $menuBurger[$i]['label']; ?>
-                    </a>
-                </li>
-            <?php } ?>
-        <?php } ?>
-    </ul>
+
+
 
     <div id="corps">

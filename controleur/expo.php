@@ -7,18 +7,24 @@ include_once "$racine/modele/bd.expo.inc.php";
 $listeExpos = getExpos();
 $maxId = getIdExpoMax();
 
-
-
-for ($i=$maxId; $i>0; $i--)
-{
+$prix=0;
+$maxID=getIdExpoMax();
+for ($i = $maxID; $i>0;$i--){
     if (isset($_POST['expo'.$i]))
     {
-        $Tarif=(getTarA($i)*$_POST['NbAdu'])+(getTarE($i)*$_POST['NbEnf']);
+        $prixEnfant = getPrixEnfant($i);
+        $nbEnfant = $_POST['NbEnf'];
+        $prixAdulte = getPrixAdulte($i);
+        $nbAdulte = $_POST ['NbAdu'];
+
+
+
+
+        $prix = ($prixEnfant * $nbEnfant) + ($prixAdulte * $nbAdulte);
+
     }
 
 }
-
-
 
 // appel du script de vue qui permet de gerer l'affichage des donnees
 

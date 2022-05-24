@@ -39,7 +39,7 @@
     </div>
 
 </header>
-<form action="/?action=expo" method="post">
+<form action="./?action=expo" method="post">
 <label for="NbAdu">Nombre d'entrée Adulte</label>
 <input type="number" id="NbAdu" name="NbAdu"
        min="0" max="100">
@@ -57,30 +57,10 @@ for ($i = 0; $i < count($listeExpos); $i++){
     <label for=expo"<?php echo $listeExpos[$i]['id']?>><?php echo '' . $listeExpos[$i]['nom']?></label><br>
     <?php
 } ?>
+    <button type="submit">Tarif</button>
 </form>
-
-<html>
-<head>
-    <script>
-        function myFunction() {
-            var x;
-            var r = confirm("Le Formulaire est remplie correctement ?");
-            if (r == true) {
-                x = "Voici votre Tarif :";
-            }
-            else {
-                x = "Veuillez remplir correctement le formulaire";
-            }
-            document.getElementById("demo").innerHTML = x;
-        }
-    </script>
-</head>
-<body>
-<button type="submit" onclick="myFunction()">Tarif</button>
-<p id="demo"></p>
-</body>
-</html>
-
 <script src="js/jquery-3.4.1.min.js"></script>
+
 </body>
 </html>
+voici le votre Tarif : <?php echo $prix ?> €

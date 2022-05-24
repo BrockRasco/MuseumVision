@@ -21,7 +21,7 @@ function getExpos() {
     }
     return $resultat;}
 
-function getTarA($id) {
+function getPrixAdulte($id) {
 
 
     try {
@@ -39,7 +39,7 @@ function getTarA($id) {
     return $resultat;
 }
 
-function getTarE($id) {
+function getPrixEnfant($id) {
     try {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select tarifEnfant from exposition where id=:id");
